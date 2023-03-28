@@ -1,0 +1,12 @@
+
+div {
+  color: #00ff2a;
+  font-size: 100px;
+}
+
+/* div에 logo 쓴 명령 */
+div.logo{
+  width: 500px;
+  height: 500px;
+  background: url("../images/heropy.png");
+}
