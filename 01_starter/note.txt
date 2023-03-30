@@ -116,3 +116,53 @@ http 원격 사이트 주소
 
 <image src="경로 지정" alt="로고">
 ___alt 안 쓰면 웹 근성 검사에서 빠꾸
+
+
+
+
+0329--------------
+하이퍼 링크 달기
+css 연결하기 - link
+
+브라우저 스타일 초기화 = 크로스브라우징
+reset.css-cdn 구글에 검색해 복붙
+프로그램 상단에 올려야함
+도화지 백지로 만든다는 생각
+
+Emmet 사용
+
+인라인 특 가로세로 지정 못함
+
+margin - 외부 여백 (인라인은 상하 적용못함)
+padding - 내부 여백 ()
+
+블록_h,p,img 사용
+lorem ipsum : 샘플 텍스트 생성
+placeholder.com: 샘플 이미지(https://via.placeholder.com/350x250.png/0000FF/FFFFFF?text=Logo+Image)
+
+
+ul unordered list(블록): 순서가 필요없는 목록에 쓰임
+ol ordered list(블록): 순서가 있는 목록, ul에 비해 사용 빈도가 떨어짐
+
+임시태그 _ 
+<a href="#Intro">Intro</a>
+ <h2 id="Intro">Intro</h2>
+  <p style="height: 300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita 
+  exercitationem laborum nihil deleniti, fugit sequi delectus voluptate, 
+  dignissimos nulla ipsam laudantium voluptatem eaque! Sint dolorum, 
+  voluptate debitis quidem quaerat optio.</p>
+
+글자 누르면 해당 위치로 이동함
+
+<!-- span(인라인): 텍스트 구분을 위해 사용(주로 글자에 스타일 적용시) -->
+  <p>
+    <span>동해물</span>과 백두산이 마르고 닳도록
+  </p>
+
+  <!-- span을 div로 바꿔보기 -->
+  <!-- div는 글자를 다루는데 적합하지 않음 _레이아웃 다루는 용도 -->
+  <p>
+    <div>동해물</div>과 백두산이 마르고 닳도록
+  </p>
+
+줄바뀜생김/한 칸 다 차지 적합x
