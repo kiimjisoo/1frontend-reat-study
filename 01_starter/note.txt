@@ -166,3 +166,18 @@ ol ordered list(블록): 순서가 있는 목록, ul에 비해 사용 빈도가 
   </p>
 
 줄바뀜생김/한 칸 다 차지 적합x
+
+
+select는 option 세트
+
+textarea 여러줄 입력 가능 리사이즈 가능함
+리사이즈 막는 법 style="resize: none; 추가
+
+table 
+colspan / rowspan : 셀 병합
+EX) <td colspan="원하는 칸 수 ">1</td>
+
+미완성시 메모
+TODO / FIXME / BUG / [ ] / 
+
+semantic
