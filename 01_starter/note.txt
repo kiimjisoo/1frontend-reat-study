@@ -181,3 +181,60 @@ EX) <td colspan="원하는 칸 수 ">1</td>
 TODO / FIXME / BUG / [ ] / 
 
 semantic
+
+0331----
+semantic 진도
+css 기본 문법 
+    -css선언 방식
+	전체/태그/클래스/아이디
+
+클래스 선택시 .class이름
+(<span class="orange">오랜지</span>)
+아이디 선택시 #id이름
+(<li id="orange" class="orange">오랜지</li>)
+
+선택자
+복합 선택자 : 기본 선택자를 조합해서 사용하는 선택자
+  1. 일치 선택자 : 동시에 만족하는 요소 선택
+    span.orange {
+      color: red;
+    }
+
+    2. 자식 선택자 : 자식 요소를 선택 
+    ul > .orange {
+      color: red;
+    }
+
+     3. 하위(후손,자손) 선택자 : 하위 요소(자식 포함)를 선택, 띄어쓰기가 선택자의 기호! 
+
+    div .orange {
+      color: red;
+     }
+
+     4. 인접 형제 선택자 : 인접한 다음 형제 요소 하나를 선택
+    .orange + li {
+      color: red;
+    }
+
+    /* 5. 일반 형제 선택자 : 다음 형제 요소 모두를 선택
+    .orange ~ li {
+      color: red;
+    }
+hover : 마우스 커서 올라가있는 동안 
+active : 마우스를 클릭하는 동안 
+focus : 요소가 활성화 되면(입력창)
+
+특정요소 선택자
+:first-child (첫번째 자식 요소)
+:last-child (마지막 자식 요소)
+
+.(class 부름)/fruits(class 이름)/div(특정요소_정확도를 높여준것 확실히 하기 위해)/:first-child(첫번째 자식요소)
+.fruits div:first-child {
+      color: red;
+}
+
+
+semantic 진도
+css 기본 문법 
+선택자
+커스텀 스크롤 만들기
