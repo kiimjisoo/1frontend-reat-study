@@ -14,16 +14,24 @@
   }
 
 /* 4. 45~60 라인의 class가 header인 태그를 선택하는 선택자를 작성(자식 선택자 필수) */
-
+  .column-1 > .header {
+    border: 2px solid green;
+  }
 
 /* 5. 62~77 라인의 <ul>태그에서 3번째 <li>을 선택하는 선택자를 작성(가상 클래스 선택자 필수) */
-
+  #detail_list > :nth-child(4) > li:nth-child(3) {
+    border: 2px solid green;
+  }
 
 /* 6. 78 라인의 <h3>태그에 마우스를 올렸을 때의 선택자를 작성 */
-
-
-/* 7. 82~85 라인의 type이 text인 <input>태그에 focus 됐을 때의 선택자를 작성(속성 선택자 필수) */
+  #detail_list > h3:last-child:hover {
+    border: 2px solid green;
+  }
+/* 7. 82~85 라인의 type이 text인 <input>태그에 focus 됐을 때의 선택자를 작성 (속성 선택자 필수) */
 /* 단, 마지막 읽기 전용 input은 선택에서 제외 */
+input[type="text"]:focus {
+  background-color: aqua;
+}
 
 
 
