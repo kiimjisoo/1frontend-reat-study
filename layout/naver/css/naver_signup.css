@@ -22,6 +22,15 @@ input, select {
   padding: 10px 110px 10px 14px;
 }
 
+label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.label-margin {
+  margin: 19px 0 8px;
+}
+
 
 /* 헤더 영역 */
 header {
