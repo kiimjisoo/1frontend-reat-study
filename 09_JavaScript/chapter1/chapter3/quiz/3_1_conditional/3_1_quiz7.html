@@ -23,13 +23,27 @@
     //}
 
     // 풀이7
-    const site = prompt('사이트를 입력하시오');
-    if (edge) {
-      window.alert('edge를 사용하고 계시네요!');
-    } else if ('chrome', 'firefox') {
-      alert('저희 서비스가 지원하는 브라우저를 사용하고 계시네요')
+    // const site = prompt('사이트를 입력하시오');
+    // if (edge) {
+    //   window.alert('edge를 사용하고 계시네요!');
+    // } else if ('chrome', 'firefox') {
+    //   alert('저희 서비스가 지원하는 브라우저를 사용하고 계시네요')
+    // } else {
+    //   alert('현재 페이지가 괜찮아 보이길 바랍니다!')
+    // }
+
+
+    if (browser === 'Edge') {
+      alert('Edge를 사용하고 계시네요!');
+    } else if (
+      browser === 'Chrome' || 
+      browser === 'Firefox' || 
+      browser === 'Sagari' || 
+      browser === 'Opera'
+      ) {
+        alert('저희 서비스가 지원하는 브라우저를 사용하고 계시네요');
     } else {
-      alert('현재 페이지가 괜찮아 보이길 바랍니다!')
+      alert('현재 페이지가 괜찮아 보이길 바랍니다!');
     }
   </script>
 </head>

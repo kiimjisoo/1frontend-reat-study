@@ -12,13 +12,19 @@
 
     // 풀이1
     const num = Number (prompt('숫자를 입력해주세요', '0'));
-    if (num >= 50) {
-      document.write('50 이상');
-    } else if (num < 50) {
-      document.write('50 이하');
-    }
+    // if (num >= 50) {
+    //   document.write('50 이상');
+    // } else if (num < 50) {
+    //   document.write('50 이하');
+    // }
     
 
+    let msg = '50미만';
+    if (num >= 50) {
+      msg = '50이상';
+    }
+    document.write(msg);
+  
 
 
 
