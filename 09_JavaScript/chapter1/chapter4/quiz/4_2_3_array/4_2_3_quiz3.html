@@ -20,9 +20,12 @@
     fruits.splice(indexel, 1);
     console.log(fruits);
     
-    if (hate !== '바나나') {
+    if (indexel === -1) {
       alert('제거할 과일이 없습니다.');
+    } else {
+      fruits.splice(indexel, 1);
     }
+    console.log(fruits);
 
 
   </script>
