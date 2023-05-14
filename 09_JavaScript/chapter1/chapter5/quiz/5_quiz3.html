@@ -15,10 +15,22 @@
 
 
     // 풀이3
-    
+    const addNum = 5;
+    const num2 = 10;
+
+    const counter = setInterval(function () {
+      addNum++;
+      console.log('addNum' + addNum);
+    }, 1000);
+
+    clearInterval(function () {
+      num2;
+      console.log(num2);
+    });
+  
 
 
-    printNumbers(5, 10); // 5~10까지 1초 간격으로 출력
+    printNumbers(addNum, num2); // 5~10까지 1초 간격으로 출력
 
   </script>
 </head>
