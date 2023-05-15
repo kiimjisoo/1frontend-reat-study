@@ -17,17 +17,37 @@
 
 
     // 풀이2
-    const num1 = prompt('x값을 입력하세요');
-    const num2 = prompt('n값을 입력하세요');
-    function pow(num1,num2) {
-      return  num1 * num2;
-    }
-    const result = pow(num1, num2);
-    document.write(result);
+    // const num1 = prompt('x값을 입력하세요');
+    // const num2 = prompt('n값을 입력하세요');
+    // function pow(num1,num2) {
+    //   return  num1 * num2;
+    // }
+    // const result = pow(num1, num2);
+    // document.write(result);
 
-    if (num2 <= 0 ) {
-      alert('자연수를 입력해주세요');
+    // if (num2 <= 0 ) {
+    //   alert('자연수를 입력해주세요');
+    // }
+
+    function pow(x, n) {
+      let result = x;
+
+      for(let i = 1; i < n; i++) {
+        result *= x;
+      }
+      
+      return result;
     }
+    const x = prompt('x?');
+    const n = prompt('n?');
+
+    if (n < 1) {
+      alert(`${n}은 양의 정수이어야 합니다`);
+    } else {
+      document.write(pow(x, n));
+    }
+
+
 
 
   </script>

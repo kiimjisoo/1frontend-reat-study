@@ -15,22 +15,38 @@
 
 
     // 풀이3
-    const addNum = 5;
-    const num2 = 10;
+    // const addNum = 5;
+    // const num2 = 10;
 
-    const counter = setInterval(function () {
-      addNum++;
-      console.log('addNum' + addNum);
-    }, 1000);
+    // const counter = setInterval(function () {
+    //   addNum++;
+    //   console.log('addNum' + addNum);
+    // }, 1000);
 
-    clearInterval(function () {
-      num2;
-      console.log(num2);
-    });
+    // clearInterval(function () {
+    //   num2;
+    //   console.log(num2);
+    // });
+
+    // 한글로 풀이
+    // 1) 함수 printNumbers(from, to) 선언하기
+    // 2) 1초 간격으로(setInterval(함수, 1000)) from 값을 출력시키기
+    // 3) 출력된 숫자를 1씩 증가시키기(+1, ++)
+    // 4) to 값 까지만(조건: from === to, from >= to) 출력하고 멈추기(clearInterval(변수))
+
+    function printNumbers(from, to) {
+      const timerId = setInterval(function () {
+        document.write(from);
+        if (from === to) {
+          clearInterval(timerId);
+        }
+        from++;
+      }, 1000);
+    }
   
 
 
-    printNumbers(addNum, num2); // 5~10까지 1초 간격으로 출력
+    printNumbers(5, 10); // 5~10까지 1초 간격으로 출력
 
   </script>
 </head>
