@@ -54,13 +54,29 @@
     // tax에는 인자값을 전달하지 않고 tip에만 0.15를 할당하려면?
     console.log(calculate(100, undefined, 0.15)); // 깔끔하지가 않음, 개선할 방법은 디스트럭처링!
 
-
-    function calculatePrice(total, tax = 0.1, tip = 0.05) {
+    // 디스트럭처링을 통해 개선한 코드
+    // 함수 호출의 인수를 객체로 만들어서 넘김
+    // 장점: 매개변수 순서에 신경쓸 필요 없이 필요한 값만 넘기면 됨
+    function calculate2({ total = 0, tax = 0.2, tip = 0.1 }) {
       return total + (total * tax) + (total * tip);
-
     }
-    calculatePrice(10);
+    console.log(calculate2({ total: 100, tip: 0.15 }));
+    console.log(calculate2({ tip: 0.15, total: 100 })); // 구조분해할당시 순서와 개수를 신경 쓸 필요X
+    console.log(calculate2({ }));
+    // console.log(calculate2()); // error
+    // console.log(calculate2(undefined)); // error
 
+    // 빈 객체로 기본값을 설정하기
+    function calculate3({ total = 0, tax = 0.2, tip = 0.1 } = {}) {
+      return total + (total * tax) + (total * tip);
+    }
+    console.log(calculate3({ total: 100, tip: 0.15 }));
+    console.log(calculate3({ }));
+    console.log(calculate3()); 
+    // { total = 0, tax = 0.2, tip = 0.1 } = {} 식이 빈값으로 들어감 
+    console.log(calculate3(undefined)); 
+    // 인수로 무엇을 전달했는지 상관없이 세 가지 기본 속성을 가진 객체로 설정됨
+    
 
   </script>
 </head>
