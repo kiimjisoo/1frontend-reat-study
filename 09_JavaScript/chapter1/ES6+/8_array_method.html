@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>배열 메소드</title>
   
 </head>
 <body>
@@ -37,6 +37,7 @@
       return num * 10; // 반환
     });
 
+    
     const newNumbers2 = numbers.map(num => num * 10); // 화살표 문법 return 생략ver
 
     console.log(newNumbers, newNumbers2);
@@ -48,9 +49,10 @@
       {firstName: 'Velopert', lastName: 'Kim'},
     ];
 
+    
     // Quiz: ['jisoo kim', 'Zero Cho', 'Velopert kim']
     const newPersons = persons.map((name) => {
-      // console.log(name.lastName); //객체 불러올 때 .객체
+    //   // console.log(name.lastName); //객체 불러올 때 .객체
       return `${name.firstName} ${name.lastName}`; // return으로 newPersons에 반환
     });
     console.log(newPersons);

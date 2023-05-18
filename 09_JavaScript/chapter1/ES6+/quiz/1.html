@@ -25,8 +25,6 @@
     console.log(batman);
 
 
-
-
     let arr = ['one', 'two', 'three'];
 
     const [one, two, three] = arr;
@@ -45,6 +43,51 @@
     [1, 2, 3].map(x => x * x);
   
 
+    // 9장
+
+    const veggie = ['tomato', 'cucumber', 'beans'];
+    const meat = ['pork', 'beef', 'chicken'];
+
+    const menu = [...veggie, 'pasta', ...meat];
+    console.log(menu);
+
+    const runners = ['tom', 'paul', 'mark', 'luke'];
+    const [first, second, ...losers] = runners;
+    console.log(losers);
+
+    // 10장
+
+    // const animal = {
+    //   name: name, 
+    //   age: age,
+    //   breed: breed
+    // };
+    // const animal = {
+    //   name, 
+    //   age,
+    //   breed
+    // };
+
+    const name = 'myname';
+    const age = 27;
+    const favoritcolor = 'green';
+    const persont = {
+      name,
+      age,
+      favoritcolor
+    };
+    console.log(persont.favoritcolor);
+
+    // ***********
+    const person8 = {
+      name5: 'jisoo',
+      age5: 23
+    };
+    console.log(person8); // {name5: 'jisoo', age5: 23}
+    console.log(person8.name5); // jisoo
+    const { name5, age5} = person8 // 변수명은 키값과 동일하게!!
+    console.log(name5, age5); // jisoo 23
+    // ************
 
   </script>
 </head>
