@@ -137,19 +137,56 @@
     // Quiz
     // 앞의 프로미스 체이닝 예제3을 async/await를 사용하여 리팩토링하기
 
-    const loginUser = async (id, passward) => {
+    // const loginUser = async (id, passward) => {
+    //   // 네트워크 통신을 하는것처럼 꾸밈
+    //   setTimeout(() => {
+    //     if (id === 'jisoo' && passward === '1234') {
+    //       // 로그인과 관련된 작업을 하고 서버에서 받아온 유저 정보(여기서는 그냥id)를 콜백함수에 전달함
+    //       return id;
+    //     } else {
+    //       new Error('존재하지 않음');
+    //     }
+    //   }, 2000);
+    // };
+
+    // const getRoles = async(userId) => {
+    //   setTimeout(() => {
+    //     if (userId === 'jisoo') {
+    //       // 권한을 가져오는 작업을 하고 받아온 권한 정보를 콜백 함수에 전달함
+    //       resolve({name: 'jskim', role: 'admin'});
+    //     } else {
+    //       reject(new Error('접근 권한 없음'));
+    //     }
+    //   }, 1000);
+    // };
+
+    // const id = prompt('id를 입력하세요');
+    // const passward = prompt('pw를 입력하세요');
+
+    // loginUser(id, passward) await(userId => { // 로그인이 성공하면 그러면
+    //     return getRoles(userId); //userId 값을 통해 권한 정보를 얻는 getRoles()호출
+    //   })await(userInfo => { // 권한 정보를 얻어오면 그러면
+    //     alert(`welcome ${userInfo.name} (${userInfo.role})`);
+    //   })await(err => { // 에러 핸들링
+    //     console.error(err);
+    //   });
+
+      const loginUser = (id, passward) => {
+      return new Promise((resolve, reject) => {
         // 네트워크 통신을 하는것처럼 꾸밈
         setTimeout(() => {
           if (id === 'jisoo' && passward === '1234') {
             // 로그인과 관련된 작업을 하고 서버에서 받아온 유저 정보(여기서는 그냥id)를 콜백함수에 전달함
-            return id;
+            resolve(id);
           } else {
-            new Error('존재하지 않음');
+            reject(new Error('존재하지 않음'));
           }
         }, 2000);
+      });
     };
 
-    const getRoles = async(userId) => {
+    const getRoles = (userId) => {
+      return new Promise((resolve, reject) => {
         setTimeout(() => {
           if (userId === 'jisoo') {
             // 권한을 가져오는 작업을 하고 받아온 권한 정보를 콜백 함수에 전달함
@@ -158,23 +195,35 @@
             reject(new Error('접근 권한 없음'));
           }
         }, 1000);
+      });
     };
 
     const id = prompt('id를 입력하세요');
     const passward = prompt('pw를 입력하세요');
 
-    loginUser(id, passward) 
-      await(userId => { // 로그인이 성공하면 그러면
-        return getRoles(userId); //userId 값을 통해 권한 정보를 얻는 getRoles()호출
-      })
-      await(userInfo => { // 권한 정보를 얻어오면 그러면
+
+    const loginAndGetRoles = async (id, passward) => {
+      try {
+        const userId = await loginUser(id, passward);
+        const userInfo = await getRoles(userId);
         alert(`welcome ${userInfo.name} (${userInfo.role})`);
-      })
-      await(err => { // 에러 핸들링
+        
+      } catch (error) {
         console.error(err);
-      });
+      }
+    };
+    loginAndGetRoles(id, passward);
 
-
+    // loginUser(id, passward) 
+    //   .then(userId => { // 로그인이 성공하면 그러면
+    //     return getRoles(userId); //userId 값을 통해 권한 정보를 얻는 getRoles()호출
+    //   })
+    //   .then(userInfo => { // 권한 정보를 얻어오면 그러면
+    //     alert(`welcome ${userInfo.name} (${userInfo.role})`);
+    //   })
+    //   .catch(err => { // 에러 핸들링
+    //     console.error(err);
+    //   });
 
 
 
