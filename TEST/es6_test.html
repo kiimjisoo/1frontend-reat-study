@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+
+    // function hello(val) {
+    //   return 'Hello ' + val;
+    // }
+
+    // const hello = val => 'hello ' + val;
+
+          // setTimeout(function () {
+      //   console.log(this); // window 객체() (window.setTimeout은 window객체의 메소드)
+      //   this.classList.toggle('opening');
+      // }, 500);
+
+      // 해결방법
+    //   setTimeout(() => {
+    //     console.log(this);
+    //     this.classList.toggle('opening');
+    //   }, 500);
+    // });
+    const race = '100m dash';
+    const runners = ['Kim', 'Lee', 'Park'];
+    
+    const results = runners.map((runner, index) => ({
+        name: runner,
+        race: race,
+        place: index + 1
+    }));
+    console.log(results);
+
+
+    // const name = 'JH Kim';
+    // const age = 30;
+    // const hobby = 'badminton';
+    // const greeting = 'Hello my name is ' + name + '. I\'m ' + age + ' years old. My hobby is playing ' + hobby + '.';
+
+    // console.log(`Hello my name is ${name} .I\m ${age} years old. My hobby is playing ${hobby}.`);
+
+    const action = {
+      type: 'action/name',
+      payload: {
+        id: '1',
+        title: '메인 화면 구성하기',
+        content: '메인 이미지와 아이템 목록 만들기',
+        done: true
+      }
+    };
+
+    const { type} = action; 
+    const { id, title, content, done } = action.payload; 
+    console.log(type, id, title, content, done);
+
+
+    const person = {
+      name: 'JH Kim',
+      job: 'teacher',
+      education: { // optional
+        high_school: { // optional
+          name: 'Songdo'
+        },
+        university: { // optional
+          name: 'Incheon Hawaii',
+          major: 'ICE'
+        }
+      }
+    };
+
+
+    let universityMajor;    
+    universityMajor = person.education?.university?.major;
+    console.log(universityMajor);
+    
+    
+// 옵셔널 체이닝 미사용시
+
+    // if (person.education &&
+    //     person.education.university) {
+    //   universityMajor = person.education.university.major;
+    // }
+    // console.log(universityMajor);
+
+
+    const userInfo = {
+    name: 'Goni Kim',
+    age: 30
+    };
+
+    userInfo.email = 'geoblo@naver.com';
+    console.log(userInfo);
+
+
+    // const moneyMap = new Map();
+    // const moneyList = [2000000, 240000, 3000000, 1500];
+
+    // moneyMap.delete(0);
+    // console.log(moneyMap);
+
+    const moneyList = [2000000, 240000, 3000000, 1500];
+    // const moneyMap = new Map(moneyList);
+    // moneyMap.delete(0);
+    // console.log(moneyMap);
+
+    // 배열 구조 분해 할당
+    // slice로 0 제거
+    // 배열에 다시 넣기
+    // for (const money of moneyList) {
+    //   console.log(money);
+    // }
+    // money.splice(moneyList.lastIndexOf('0'), 1);
+    // console.log(money);
+
+    // const sliceMoney = new Map();
+
+
+
+    deleteMember('a3'); // 호출 시 출력 결과는 아래와 같습니다.
+  [
+  { id: 'a1', name: 'Goni', age: 36 },
+  { id: 'a2', name: 'Pony', age: 32 },
+  { id: 'a4', name: 'Moly', age: 24 },
+  { id: 'a5', name: 'Noni', age: 45 }
+  ]
+  const members = [
+      { id: 'a1', name: 'Goni', age: 36 },
+      { id: 'a2', name: 'Pony', age: 32 },
+      { id: 'a3', name: 'Tony', age: 12 },
+      { id: 'a4', name: 'Moly', age: 24 },
+      { id: 'a5', name: 'Noni', age: 45 }
+  ];
+
+  const newMembers = function deleteMember(idPerson) {
+    return members.filter(idPerson);
+    console.log(newMembers);
+  }
+  deleteMember('a3');
+    
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
