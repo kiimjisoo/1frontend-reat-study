@@ -48,10 +48,19 @@ function CommentList() {
         );
       })}
 
+      {/* 코드 간소화 */}
+      {comments.map(comment => <Comment name={comment.name} content={comment.content} /> )}
+
       {/* map() 함수의 결과 */}
-      {/* {
-        const array = [킴지수, 안녕하세요, 김지수입니다, 유재석, 리액트 배워요~!, 이미주, 저도 배우고 싶어요,  이이경, 저도 배우고 싶어요];
-      } */}
+      {[
+          <Comment name={'킴지수'} content={'안녕하세요, 김지수입니다'} />,
+          <Comment name={'유재석'} content={'리액트 배워요~!'} />,
+          <Comment name={'이미주'} content={'리액트 배워요~!'} />,
+          <Comment name={'이이경'} content={'리액트 배워요~!'} />
+      ]}
+        
+
+
     </div>
   );
 }

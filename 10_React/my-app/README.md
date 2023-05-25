@@ -20,3 +20,7 @@
   myapp react npm install -enter => ndoe modules 깔기(git에 안 올라감)
               npm start -enter -> react script start
 
+state사용자가 만듦 직접 변경x
+
+Hook
+=함수 (use로 시작)

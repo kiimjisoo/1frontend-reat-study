@@ -1,5 +1,7 @@
 function Profile(props) {
   console.log(props);
+  // props.name = '고라니'; // props는 전달받은 값 변경 불가 \\ props는 객체이다
+  // props는 읽기 전용이다 변경 불가
   
   return (
     <div>
