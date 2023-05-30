@@ -61,7 +61,6 @@ return <li key={student.id}>{student}</li>
 {student}이 아닌 {student.name}으로 써야 {김지수}옴
 
 
-조건부 렌더링
-리스트와 key
+
 
 
