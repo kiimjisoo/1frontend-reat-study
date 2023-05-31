@@ -60,7 +60,17 @@ return <li key={student.id}>{student}</li>
 에러나는 이유는 {name:김지수}를 불러옴 
 {student}이 아닌 {student.name}으로 써야 {김지수}옴
 
+-chapter11_NameForm
+form태그 사용시 꼭 안에 input태그 있어야함
+onChange={e => handleChange(e)
+onChange 이벤트 객체를 e로 전달(받는게 1개라면 e생략 가능)
 
+==useRef==
+참조를 사용하기 위해
+특정DOM선택시 사용
+-chapter7_TextInputWithFocusButton
+
+e.target //현재 이벤트가 발생한 대상
 
 
 
