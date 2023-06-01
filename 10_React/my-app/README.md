@@ -92,4 +92,12 @@ setInputs(함수 넣음(매개변수명은 내마음대로 이전 state값을 �
 
 
 
+packagejson 부터 확인
+
+
+
+onChange={handleNameChange} 변경 감지
+
+
+
 
