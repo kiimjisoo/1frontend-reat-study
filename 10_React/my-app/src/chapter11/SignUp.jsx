@@ -20,17 +20,48 @@ import React, { useState } from 'react';
 // 2) 어려우면 일단 각각의 state를 따로 선언해도 되고 객체 형태로 한번에 관리해도 됨
 
 function SignUp(props) {
-  const [name, setName] = useState('');
-  const [gender, setGender] = useState('여자');
-  
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
-  const handleChangeGender = (e) => {
-    setGender(e.target.value);
+
+  // const [name, setName] = useState('');
+  // const [gender, setGender] = useState('여자');
+
+  // 객체 하나로 관리 시
+  const [inputs, setInputs] = useState({
+    name: '',
+    gender: '여자'
+  });
+  const { name, gender } = inputs;
+
+  // const handleChangeName = (e) => {
+  //   setName(e.target.value);
+  // };
+  // const handleChangeGender = (e) => {
+  //   setGender(e.target.value);
+  // };
+
+  // 객체 하나로 관리 시
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value);
+
+    // 방법1 _잘 안 씀
+    // const copyObj = {
+    //   ...inputs 
+    // };
+    // copyObj[name] = value;
+    // setInputs(copyObj)
+
+    // 방법2
+    setInputs(inputs => ({
+      ...inputs, // 기존의 inputs값을 복사한 뒤
+      [name]: value // name 값을 키로 가진 속성의 값을 value로 설정
+    }));
   };
 
+
+
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     alert(`이름: ${name}, 성별: ${gender}`);
   };
 
@@ -38,13 +69,14 @@ function SignUp(props) {
     <form onSubmit={handleSubmit}>
       <label>
         이름:
-        <input 
-          type="text"
-          onChange={handleChangeName}
-          />
+        {/* <input type="text" value={name} onChange={handleChangeName}/>  */}
+          <input type="text" name="name" onChange={handleInputChange} /> 
+          {/* value 있어야 state에 값이 들어감 */}
       </label>
       <label>
-        <select value={gender} onChange={handleChangeGender}>
+        성별:
+        {/* <select value={gender} onChange={handleChangeGender}> */}
+        <select name="gender" value={gender} onChange={handleInputChange}>
           <option value="여자">여자</option>
           <option value="남자">남자</option>
         </select>

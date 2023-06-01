@@ -74,3 +74,22 @@ e.target //현재 이벤트가 발생한 대상
 
 
 
+-chapter11_SignUp
+e.preventDefault(); submit은 기본적으로 새로고침이 일어남 그거 막기 위해 넣어줌
+구조분해 할당 안 하면 매번 접근시 불편함 (ex)input.name)
+방법1
+react는 얕은 비교를 하기때문에 새로운 주소(copy)를 만들어야함
+스프레드 연산자 사용해 복사
+set함수에 넣어줌
+방법2
+set함수 내에서 처리하는 방법
+set함수 내 새로운 state가 들어와야 함
+setInputs(함수 넣음(매개변수명은 내마음대로 이전 state값을 모두 받아옴 inputs) => ({
+  return        
+  ...inputs, // 기존의 inputs값을 복사한 뒤
+  [name]: value // name 값을 키로 가진 속성의 값을 value로 설정
+}))
+
+
+
+
