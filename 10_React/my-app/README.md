@@ -99,5 +99,15 @@ packagejson 부터 확인
 onChange={handleNameChange} 변경 감지
 
 
+state같은 값 쓸려면 부모에서 Props받아옴
+조상 컴포넌트에 state 옮김
+남은 하위 컴포넌트에 props로 state넘김
 
+State 끌어올리기 
+여러 컴포넌트 사이에서 state공유
+
+컴포넌트 합성
+children 사용
+
+context
 
