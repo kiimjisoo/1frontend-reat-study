@@ -111,3 +111,40 @@ children 사용
 
 context
 
+
+패키지 다운로드 
+npm install 패키지 이름
+
+chapter7 7.5 usercallback - 최적화시 사용
+
+자동완성 안 먹을땐 import 직접 써야함
+백틱내부는 css똑같이 쓸 수 있음
+vscode-styled-components 없으면 글자색 변동 없음
+백틱내에서 &:hover{} &=자기 자신
+
+컴포넌트를 따로 만들어도 되고 아니면 내부에 class로 만들어도 됨 
+const TodoTemplateWrapper = styled.div`
+  width: 512px;
+
+  컴포넌트를 따로 만들어도 되고 아니면 내부에 class로 만들어도 됨 
+  자손을 의미 &. 생략 
+  &.app-title {
+    background: #22b8cf;
+  }
+  .content {
+    background: white;
+  }
+`;
+<!-- <div className='app-title'>일정 관리</div> -->
+=
+const AppTitle = styled.div`
+  background: #22b8cf;
+`}
+<!-- <AppTitle>일정 관리</AppTitle> -->
+취향차이인데 class 사용하는게 가독성 좋음
+
+
+https://react-icons.github.io/react-icons/search?q=Mdadd
+에서 원하는 아이콘 찾고 import 복붙
+// Tip: as를 사용하여 별칭을 붙여 사용하면 추후 아이콘 바꿀 때 한곳만 바꾸면 되서 편함!
+ex)MdAdd as AddIcon(별칭)
