@@ -150,10 +150,8 @@ https://react-icons.github.io/react-icons/search?q=Mdadd
 ex)MdAdd as AddIcon(별칭)
 
 
-TodoInsertWrapper = form 태그
 
-
-
+------- my-todo -------
 
 방법1---
     const copyTodos = [...todos]; 배열 복사
@@ -190,3 +188,8 @@ id에 2가 들어오면 배열에서 id값이 2를 찾음 배열 순서가1번�
     setTodos(todos => todos.map((todo) => 
       todo.id === id ? { ...todo, checked: !todo.checked } : todo
     ));
+
+
+쿼리스트링 key-value & key-value
+
+
