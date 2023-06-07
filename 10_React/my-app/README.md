@@ -148,3 +148,45 @@ https://react-icons.github.io/react-icons/search?q=Mdadd
 에서 원하는 아이콘 찾고 import 복붙
 // Tip: as를 사용하여 별칭을 붙여 사용하면 추후 아이콘 바꿀 때 한곳만 바꾸면 되서 편함!
 ex)MdAdd as AddIcon(별칭)
+
+
+TodoInsertWrapper = form 태그
+
+
+
+
+방법1---
+    const copyTodos = [...todos]; 배열 복사
+    const targetIndex = todos.findIndex((todo) => todo.id === id);
+id에 2가 들어오면 배열에서 id값이 2를 찾음 배열 순서가1번째면 targetIndex에는 1이 들어감
+    copyTodos.splice(targetIndex, 1); targetIndex = 1 배열의 1번 요소 1개 제거
+    setTodos(copyTodos); 값 반환
+    [todos] 의존성 배열에 넣어줘야 함
+
+방법 - 2
+  불변성을 지키면서 배열의 요소를 제거해야할 때 filter() 활용
+    setTodos(todos => todos.filter((todo) => todo.id !== id));
+    id 값 일치하지 않는거 찾아서 그 값만 제외해서 새 배열에 담음
+  선택한거 제외 나머지를 새 배열에 추가
+
+
+체크박스 토글
+  방법 - 1
+  const copyTodos = [...todos];
+  const target = todos.find((todo) => todo.id === id);
+  배열에서 id 값 찾아서 target
+  target.checked = !target.checked; 
+  checked 반대
+
+  const targetIndex = todos.findIndex((todo) => todo.id === id);
+  id값 일치하는거 찾아서(findIndex) targetIndex에 넣음
+  copyTodos[targetIndex] = target;
+  copyTodos가 변경 전 true 면 false로 바뀐 값을 넣어줘야 함
+  setTodos(copyTodos);
+
+
+    방법 - 2
+    불변성을 유지하면서 배열의 특정 요소를 업데이트 해야할 때 map() 활용
+    setTodos(todos => todos.map((todo) => 
+      todo.id === id ? { ...todo, checked: !todo.checked } : todo
+    ));
