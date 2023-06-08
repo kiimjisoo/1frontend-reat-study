@@ -68,7 +68,48 @@ onclick함수보내줘야 함
 
 7.app.js
 
-8.PostViewPage
 
 
-9.  PostWritePage
+
+8. PostWritePage
+  // 글의 제목과 내용을 위한 state
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
+height={height} value={value} onChange={onChange}
+텍스트 인풋에서 받는 내용들
+PostWritePage에서 내용들을 보내줌
+<TextInput 
+  height={20}
+  value={title}
+  onChange={(e) => {
+    setTitle(e.target.value);
+
+
+9. PostViewPage
+
+
+
+빌드하기
+packagejson에 있음
+npm run build
+
+
+npm install -g serve
+g- 전역
+
+serve -s build
+만들어진 빌드폴더 기반으로 앱을 실행
+
+
+미입력시 버튼 비활성화 또는 유효성검사 후 경고 띄우기(내용을 입력하세요)
+날짜도 같이 기록(디데이 표시)
+할 일 몇개인지 표시(전체, 완료, 미완료)  
+완료된 일은 밑으로 내리기
+중요한 일은 핀 고정 버튼 누르면 상위로 올림
+할 일 목록 정렬 기능
+테마 적용(다크,라이트 모드)
+드ㅐ그 앤 드랍 적용
+할 일 수정 기능
+
+

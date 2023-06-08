@@ -22,7 +22,7 @@ function ComentList(props) {
   return (
     <Wrapper>
       {/* Quiz: 반복 렌더링 */}
-      {comments.map((commment) => {
+      {comments.map((comment) => {
         return (
           <ComentListItem key={comment.id} comment={comment} />
         );

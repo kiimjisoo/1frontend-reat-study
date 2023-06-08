@@ -24,11 +24,11 @@ const ContentText = styled.p`
 
 // 댓글의 내용만 표시해주는 컴포넌트
 function ComentListItem(props) {
-  const { comments } = props;
+  const { comment } = props;
 
   return (
     <Wrapper>
-      <ContentText>{comments.content}</ContentText>
+      <ContentText>{comment.content}</ContentText>
     </Wrapper>
   );
 }
