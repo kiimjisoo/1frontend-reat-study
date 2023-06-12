@@ -22,6 +22,7 @@ function TodoList(props) {
       {todos.map(todos => (
         <TodoListItem key={todos.id} todo={todos} onRemove={onRemove} onToggle={onToggle} />
       ))}
+      
     </TodoListWrapper>
   );
 }

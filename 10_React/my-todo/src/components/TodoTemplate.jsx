@@ -31,7 +31,7 @@ const TodoTemplateWrapper = styled.div`
 // children으로 내부 자식 엘리먼트들을 props로 받아와서 렌더링
 function TodoTemplate(props) {
   const { children } = props;
-
+  console.log(children);
   return (
     <TodoTemplateWrapper>
       <div className='app-title'>일정 관리</div>
