@@ -1,19 +1,22 @@
 import { Route, Routes } from "react-router-dom";
 import NewsList from "./components/NewList";
 import NewsPage from "./pages/NewsPage";
+import MovieList from "./components/MovieList";
 
 function App() {
   return (
-    // <>
-    //   <NewsList />
-    // </>
+    <>
+    {/* <NewsList /> */}
+    <MovieList />
+    </>
 
-    <Routes>
-      {/* ?는 category값이 선택적이라는 의미
-        즉 있을 수도 있고 없을수도 있다는 뜻
-         */}
-      <Route path="/:category?" element={<NewsPage />} />
-    </Routes>
+    // <Routes>
+      // {/* ?는 category값이 선택적이라는 의미
+      //   즉 있을 수도 있고 없을수도 있다는 뜻
+      //    */}
+    //   <Route path="/:category?" element={<NewsPage />} />
+    // </Routes>
+    
   );
 }
 
