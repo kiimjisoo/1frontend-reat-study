@@ -194,6 +194,106 @@ id에 2가 들어오면 배열에서 id값이 2를 찾음 배열 순서가1번�
 
 
 
+redux
+
+1. store 파일 만들어서
+import 및 export하기
+
+2. store 제공
+
+indexjs에서 임포트
+import { Provider } from "react-redux";
+    <Provider store={store}>
+    내가 export한 store 자동완성으로 가져옴
+      <CounterApp />
+    </Provider>
+
+3. Redux State Slice 만들기
+4. Redux Store에 Slice Reducers를 추가하기
+  createSlice만들면 actionCreator() 자동 생성
+  구조분해할당 해서 export해서 사용함
+5. 리액트 컴포넌트에서 Redux Store와 Actions 사용하기
+  redux store요청 보내는 함수 dipatch()
+  
+export const selectProductList = (state) => state.proDuct.value;
+
+  // const productList = useSelector(state => state.product.productList);
+이렇게 쓸 필요 없음
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  productList: [],
+};
+
+export const productSlice = createSlice({
+  name: 'product',
+  initialState,
+  reducers: {
+    addToProductList: (state, { payload: product }) => {
+      // state.productList.push(action.payload);
+      state.productList.push(product);
+    }
+  },
+});
+
+export const { addToProductList } = productSlice.actions;
+
+export const selectProductList = (state) => state.product.productList;
+
+export default productSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+function ProductList(props) {
+  const dispatch = useDispatch();
+  // const productList = useSelector(state => state.product.productList);
+  const productList = useSelector(selectProductList);
+
+  const [productName, setProductName] = useState('');
+
+  const handleAddProduct = () => {
+    dispatch(addToProductList(productName));
+    setProductName('');
+  };
+
+  return (
+    <>
+      <p>
+        상품 추가:
+        <input 
+          type='text' 
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
+          onKeyUp={(e) => {
+            if (e.key === 'Enter') {
+              handleAddProduct();
+            }
+          }}
+        />
+        <button 
+          type='button'
+          onClick={handleAddProduct}
+        >
+          추가
+        </button>
+      </p>
+      <p>상품 목록</p>
+      <ul>
+        {productList && 
+          productList.map((product, index) => <li key={index}>{product}</li>)}
+      </ul>
+    </>
+  );
+}
 
 
 

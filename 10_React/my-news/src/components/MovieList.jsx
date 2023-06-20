@@ -21,10 +21,9 @@ console.log(movies);
       setLoading(true);
       try {
         const response = await axios.get('http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101');
+        console.log(response.data.boxOfficeResult.dailyBoxOfficeList);
 
-        console.log(response.data);
-
-        setMovies(response.data.movies);
+        setMovies(response.data.boxOfficeResult.dailyBoxOfficeList);
       } catch(error) {
         console.error(error);
       }
@@ -32,6 +31,7 @@ console.log(movies);
     };
     fetchData();
   }, [])
+
 
   return (
     <div>
