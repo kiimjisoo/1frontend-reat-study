@@ -1,16 +1,17 @@
 import React from 'react';
-
-// 리액트(JS)에서 이미지 파일 import하는 법
-import yonexImg from "../images/yonex.jpg";
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { Col, Container, Row } from 'react-bootstrap';
 
+// 리액트(JS)에서 이미지 파일 import하는 법
+import yonexImg from "../images/yonex.jpg";
+
 // 서버에서 받아온 데이터라고 가정
 import data from "../data.json";
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts, selectProductList } from '../features/product/productSlice';
 import ProductListItem from '../component/ProductListItem';
+
 
 const MainBackground = styled.div`
   height: 500px;
