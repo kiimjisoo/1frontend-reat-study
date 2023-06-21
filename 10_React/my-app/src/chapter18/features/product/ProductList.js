@@ -1,39 +1,42 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addproduct } from './productSlice';
+import { addToProductList, selectProductList } from './productSlice';
 import { useState } from 'react';
 
 function ProductList(props) {
-  const productLists = useSelector(selectProductList);
   const dispatch = useDispatch();
+  // const productList = useSelector(state => state.product.productList);
+  const productList = useSelector(selectProductList);
 
-  const [textAmount, setTextAmount] = useState('');
-  console.log(productLists);
+  const [productName, setProductName] = useState('');
+
+  // const [textAmount, setTextAmount] = useState('');
+  const handleAddProduct = () => {
+    dispatch(addToProductList(productName));
+    setProductName('');
+  };
+
   return (
     <>
-      <div>
-        상품추가: 
+      <p>
+        상품 추가:
         <input 
-          type='text'
-          value={textAmount}
-          onChange={(e) => setTextAmount(e.target.value)}
+          type='text' 
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
         />
-        <button
+        <button 
           type='button'
-          onClick={() => {dispatch(addproduct(textAmount))}}
+          onClick={handleAddProduct}
         >
           추가
         </button>
-
-      </div>
-      <div>
-        <ul>상품 목록: 
-          <li>{
-          // productLists.map(())
-          }
-          </li>
-        </ul>        
-      </div>
+      </p>
+      <p>상품 목록</p>
+      <ul>
+        {productList && 
+          productList.map((product, index) => <li key={index}>{product}</li>)}
+      </ul>
     </>
   );
 }

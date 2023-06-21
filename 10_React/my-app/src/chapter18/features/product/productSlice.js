@@ -1,24 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: []
+  productList: [],
 };
+
 export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    // 구조분해할당해서 action 안 쓰고 별칭까지 붙여서 씀
-    addproduct: (state, { payload: proDuct }) => {
-      state.value.push(proDuct)
-
-      console.log(action);
-    },
-  }
+    addToProductList: (state, { payload: product }) => {
+      // state.productList.push(action.payload);
+      state.productList.push(product);
+    }
+  },
 });
 
+export const { addToProductList } = productSlice.actions;
 
-export const { addproduct } = productSlice.actions;
-
-export const selectProductList = (state) => state.proDuct.value;
+export const selectProductList = (state) => state.product.productList;
 
 export default productSlice.reducer;
