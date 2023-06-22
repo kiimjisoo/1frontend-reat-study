@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // bootstrap CSS 추가
+import 'react-toastify/dist/ReactToastify.min.css'; //ReactToastify CSS 추가
+
+import { ToastContainer } from "react-toastify";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
@@ -63,6 +66,13 @@ function App() {
             <Route path="/detail/:productId" element={<ProductDetail />} />
           </Route>
         </Routes>  
+        <ToastContainer 
+          position="bottom-right"
+          autoClose={3000}
+          pauseOnFocusLoss={false}
+          theme="dark"
+        />
+
       
     </>
   );
