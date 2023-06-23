@@ -44,6 +44,7 @@ const productSlice = createSlice({
       state.selectedProduct = null;
     },
   }, // 비동기는 reducers에 안 넣고 extraReducers에 넣음 
+  
   // thunk를 이용한 비동기적인 작업에는 extraReducers를 사용
   // (참고)
   // reducers로 동기 작업을 할 때는 액션 생성 함수를 자동으로 만들어주는 반면

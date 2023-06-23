@@ -37,9 +37,12 @@ input박스로 수량 입력받기 및
 글자 입력시 react-spinners 사용해 로딩 아이콘
 탭 ui및 렌더링 방법 3가지
 
+
+
 0623
 
 언마운트시 전역상태 초기화
+_안 하면 state에 남아있는 상품 보일 수 있음
 productdetail에서 useEffect 안에서 return
 product slice에서 selectedProduct 상태를 null로 바꿔주는 리듀서 만듦
 export

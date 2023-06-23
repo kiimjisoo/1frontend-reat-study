@@ -1,11 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // bootstrap CSS 추가
 import 'react-toastify/dist/ReactToastify.min.css'; //ReactToastify CSS 추가
 
-import { ToastContainer } from "react-toastify";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import ProductDetail from "./pages/ProductDetail";
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  .text-ellipsis{
+  .text-ellipsis{ // 글 넘침 
     white-space: nowrap; // 줄바꿈 안 함
     overflow: hidden; // 넘친 부분 숨기기
     text-overflow: ellipsis; // 넘친부분 어떻게 보일지
@@ -62,6 +62,7 @@ function App() {
           </Container>
         </Navbar>
       </header> */}
+
       {/* Quiz: Header 컴포넌트로 추출 및 Outlet을 활용하여 라우팅 구성해보기 */}
       {/* src/pages/Header.js */}
         <Routes>

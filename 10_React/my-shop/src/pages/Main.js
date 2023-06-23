@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
+
 // 리액트(JS)에서 이미지 파일 import하는 법
 import yonexImg from "../images/yonex.jpg";
 
