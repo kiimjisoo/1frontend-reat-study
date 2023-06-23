@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts, getMoreProductAsync, getMoreProducts, selectProductList, selectStatus } from '../features/product/productSlice';
 import ProductListItem from '../component/ProductListItem';
 import { getProducts } from '../api/productAPI';
+import LatestView from '../component/LatestView';
 
 
 const MainBackground = styled.div`
@@ -27,7 +28,7 @@ function Main(props) {
   const dispatch = useDispatch();
   const productList = useSelector(selectProductList);
   const status = useSelector(selectStatus); // API 요청 상태(로딩 상태)
-  console.log(status);
+  // console.log(status);
   // useSelector((state) => state.product.producList);
 // console.log(productList);
 
@@ -133,6 +134,9 @@ function Main(props) {
           더보기 {status}
         </Button>
       </section>
+
+      {/* 최근 본 상품 */}
+      <LatestView />
     </>
   );
 }

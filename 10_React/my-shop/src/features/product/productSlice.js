@@ -40,6 +40,9 @@ const productSlice = createSlice({
     getMoreProducts: (state, action) => {
       state.productList.push(...action.payload); // productList에 배열채로 못 넣어서 스프레드 사용
     }, 
+    clearSelectedProduct : (state) => {
+      state.selectedProduct = null;
+    },
   }, // 비동기는 reducers에 안 넣고 extraReducers에 넣음 
   // thunk를 이용한 비동기적인 작업에는 extraReducers를 사용
   // (참고)
@@ -62,7 +65,7 @@ const productSlice = createSlice({
 });
 
 
-export const { getAllProducts, getSelectedProducts, getMoreProducts } = productSlice.actions;
+export const { getAllProducts, getSelectedProducts, getMoreProducts, clearSelectedProduct } = productSlice.actions;
 
 export const selectProductList = (state) => state.product.productList;
 export const selectSelectedProduct = (state) => state.product.selectedProduct;

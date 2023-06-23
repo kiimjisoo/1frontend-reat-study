@@ -37,3 +37,21 @@ input박스로 수량 입력받기 및
 글자 입력시 react-spinners 사용해 로딩 아이콘
 탭 ui및 렌더링 방법 3가지
 
+0623
+
+언마운트시 전역상태 초기화
+productdetail에서 useEffect 안에서 return
+product slice에서 selectedProduct 상태를 null로 바꿔주는 리듀서 만듦
+export
+
+장바구니
+컴포넌트 생성
+리듀서 cart slice 생성
+store에 저장해야 사용 가능
+
+수량 변경하는 리듀서 
+상품의 id 값을 받아와서 해당 상품의 장바구니 수량을 1씩 증가/감소
+
+최근 본 상품
+
+
