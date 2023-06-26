@@ -25,7 +25,7 @@ origin 별명으로 주소 등록
  
 	*git pull origin main - github에서 파일 내려받는법
 
-
+0
 tool
 
 +add > commit > push
